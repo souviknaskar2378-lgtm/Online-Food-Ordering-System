@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodie - Online Food Ordering</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">🍴 Foodie</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#cart">Cart 🛒 <span id="cartCount">0</span></a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <h1>Delicious Food,<br>Delivered Fast!</h1>
+        <p>Order your favourite food from Foodie.</p>
+        <a href="#menu" class="btn">Order Now</a>
+    </div>
+</section>
+
+<section class="menu-section" id="menu">
+    <h2>Our Menu</h2>
+
+    <div class="controls">
+        <input type="text" id="search" placeholder="Search food...">
+
+        <select id="category">
+            <option value="All">All Categories</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Burger">Burger</option>
+            <option value="Indian">Indian</option>
+            <option value="Drinks">Drinks</option>
+        </select>
+    </div>
+
+    <div class="food-container" id="foodContainer"></div>
+</section>
+
+<section class="cart-section" id="cart">
+    <h2>Your Cart</h2>
+
+    <div id="cartItems"></div>
+
+    <div class="bill">
+        <p>Subtotal: ₹<span id="subtotal">0</span></p>
+        <p>Delivery: ₹<span id="delivery">0</span></p>
+        <h3>Total: ₹<span id="total">0</span></h3>
+    </div>
+
+    <button class="btn" onclick="openOrderForm()">Place Order</button>
+</section>
+
+<div class="modal" id="orderModal">
+    <div class="modal-box">
+        <span class="close" onclick="closeOrderForm()">×</span>
+
+        <h2>Complete Your Order</h2>
+
+        <form id="orderForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <textarea id="address" placeholder="Delivery Address" required></textarea>
+
+            <select id="payment" required>
+                <option value="">Select Payment Method</option>
+                <option value="Cash on Delivery">Cash on Delivery</option>
+                <option value="UPI">UPI</option>
+                <option value="Card">Card</option>
+            </select>
+
+            <button type="submit" class="btn">Confirm Order</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Foodie | Online Food Ordering System</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
